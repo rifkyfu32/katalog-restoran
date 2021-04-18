@@ -137,7 +137,7 @@ body {
 	min-height: 380px;
 	width: 100%;
 	text-align: center;
-	background-image: url("/images/heros/hero-image_2.jpg");
+	background-image: url("./images/heros/hero-image_2.jpg");
 	background-position: center;
 	background-color: #ce1212;
 	background-repeat: no-repeat;
