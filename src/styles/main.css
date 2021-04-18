@@ -1,0 +1,339 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: "Quicksand", sans-serif;
+	font-size: 1em;
+	color: #424242;
+}
+
+.skip-link {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	background-color: #bf1722;
+	color: white;
+	padding: 8px;
+	z-index: 100;
+}
+
+.skip-link:focus {
+	top: 0;
+}
+
+
+/*
+ * Header
+ *
+ */
+
+.header {
+	background-color: #810000;
+	min-height: 56px;
+	transition: min-height 0.3s;
+}
+
+.header_inner {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	width: 100%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header_title {
+	font-weight: 500;
+	font-size: 1.7em;
+	margin: 0.5em 0.25em;
+	color: #eeeeee;
+}
+
+.header_menu {
+	text-align: right;
+	margin-right: 10px;
+	font-size: 32px;
+	display: block;
+	color: #cecece;
+    text-decoration: none;
+}
+
+.header_menu:focus, .header_menu:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/*
+ * Top level navigation
+ */
+
+.nav {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.nav_list {
+	text-align: right;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.nav_item {
+	box-sizing: border-box;
+	display: inline-block;
+	text-align: center;
+	line-height: 24px;
+	text-transform: uppercase;
+}
+
+.nav a {
+	display: inline-block;
+	padding: 1.3em;
+	text-decoration: none;
+	color: #cecece;
+}
+
+.nav a:hover, .nav a:focus {
+	text-decoration: underline;
+	color: #fff;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.sticky+.content {
+	padding-top: 56px;
+}
+
+
+/*
+ * Jumbotron
+ */
+
+.hero {
+	/* margin space for header sticky */
+	margin-top: 56px;
+	display: flex;
+	align-items: center;
+	min-height: 380px;
+	width: 100%;
+	text-align: center;
+	background-image: url("/images/heros/hero-image_2.jpg");
+	background-position: center;
+	background-color: #ce1212;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.hero_inner {
+	margin: 0 auto;
+	background-color: rgba(0, 0, 0, .3);
+	border-radius: 3px;
+	padding: 30px;
+}
+
+.hero_title {
+	color: #fff;
+	font-weight: 500;
+	font-size: 36px;
+}
+
+.hero_tagline {
+	color: #fff;
+	margin-top: 16px;
+	font-size: 18px;
+}
+
+
+/*
+ * main
+ */
+
+main {
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+/*
+ * content
+ */
+
+.content {
+	padding: 32px;
+}
+
+
+/*
+ * explore
+ */
+
+.explore {
+	width: 100%;
+	margin: 60px auto;
+	text-align: center;
+}
+
+.explore_label {
+	font-size: 32px;
+	font-weight: lighter;
+}
+
+.explore_label::after {
+	content: '';
+	margin-top: 16px;
+	display: block;
+	border-bottom: 1px solid #eeeeee;
+}
+
+
+/*
+ * restaurants
+ */
+
+.restaurants {
+	margin: 32px auto auto;
+	text-align: left;
+}
+
+
+/*
+ * restaurant item
+ */
+
+.restaurant-item {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	width: 100%;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.restaurant-figure {
+	position: relative;
+}
+
+.restaurant-item_location {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	background-color: black;
+	color: white;
+	padding: 10px;
+	font-size: 14px;
+}
+
+.restaurant-item_address {
+	font-size: 10px;
+	text-transform: uppercase;
+	color: #fff;
+	position: absolute;
+	right: 0;
+	bottom: 2%;
+	background-color: #000;
+	padding: 5px;
+}
+
+.restaurant-item_thumbnail {
+	width: 100%;
+}
+
+.restaurant-item_content {
+	padding: 16px;
+}
+
+.restaurant-item_rating {
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.restaurant-item_title {
+	font-weight: 500;
+	font-size: 16px;
+	margin-top: 16px;
+	transition: 0.3s opacity;
+}
+
+.restaurant-item_title:hover {
+	opacity: 0.5;
+}
+
+.restaurant-item_title a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.restaurant-item_description {
+	margin-top: 16px;
+	font-size: 12px;
+	line-height: 1.5em;
+}
+
+.restaurant-item-btn {
+	margin-top: 16px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: #fff;
+	border: .05rem solid #ce1212;
+	border-radius: .1rem;
+	color: #ce1212;
+	cursor: pointer;
+	display: inline-block;
+	font-size: .8rem;
+	height: 1.8rem;
+	line-height: 1.2rem;
+	outline: 0;
+	padding: .25rem .4rem;
+	text-align: center;
+	text-decoration: none;
+	transition: background .2s, border .2s, box-shadow .2s, color .2s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.restaurant-item-btn:hover,
+.restaurant-item-btn:focus {
+	background: #fcf1f1;
+	border-color: #ce1212;
+	text-decoration: none;
+}
+
+
+/*
+ * footer
+ */
+
+footer {
+	background-color: #810000;
+	padding: 2em;
+	width: 100%;
+	text-align: center;
+}
+
+footer p {
+	text-align: center;
+	color: #fff;
+}
