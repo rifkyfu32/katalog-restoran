@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
@@ -20,7 +21,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               url: false,
-            }
+            },
           },
         ],
       },
@@ -30,8 +31,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
-      favicon: path.resolve(__dirname, 'src/favicon.ico'),
-      title: 'Delizia Apps'
+      // favicon: path.resolve(__dirname, 'src/favicon.ico'),
+      title: 'Delizia Apps',
     }),
     new CopyWebpackPlugin({
       patterns: [

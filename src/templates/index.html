@@ -5,21 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
+    <link rel="icon" href="favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <a href="#maincontent" class="skip-link">Menuju ke konten</a>
+    <a href="#mainContent" class="skip-link">Menuju ke konten</a>
     <header class="header">
         <div class="header_inner">
             <h1 class="header_title">
                 Delizia Apps
             </h1>
-            <a href="#" id="menu" class="header_menu">☰</a>
-            <nav id="drawer" class="nav">
+            <a href="#" id="hamburgerButton" class="header_menu">☰</a>
+            <nav id="navigationDrawer" class="nav">
                 <ul class="nav_list">
                     <li class="nav_item"><a href="./">Home</a></li>
-                    <li class="nav_item"><a href="#">Favorite</a></li>
+                    <li class="nav_item"><a href="#/favorite">Favorite</a></li>
                     <li class="nav_item"><a href="https://rifkyfuady.github.io/" target="_blank">About Us</a></li>
                 </ul>
             </nav>
@@ -33,14 +34,8 @@
         </div>
     </div>
 
-    <main id="maincontent">
-        <section class="content">
-            <div class="explore">
-                <h2 class="explore_label">Explore Restaurant</h2>
-                <div class="restaurants">    
-                </div>
-            </div>
-        </section>
+    <main id="mainContent">
+        
     </main>
 
     <footer id="footer">
