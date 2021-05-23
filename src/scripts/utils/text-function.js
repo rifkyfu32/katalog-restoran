@@ -3,4 +3,9 @@ const shortenText = (str, maxLen, separator = ' ') => {
   return str.substr(0, str.lastIndexOf(separator, maxLen));
 };
 
-export default shortenText;
+const htmlEntities = (str) => String(str)
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;');
+
+export { shortenText, htmlEntities };

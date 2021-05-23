@@ -1,5 +1,6 @@
 import RestaurantSource from '../../data/restaurant-source';
 import { createHeroTemplate, createRestaurantItemTemplate } from '../templates/template-creator';
+import 'img-lightbox/js/img-lightbox';
 
 const ExploreRestaurants = {
   async render() {
@@ -17,6 +18,8 @@ const ExploreRestaurants = {
     restaurants.forEach((restaurant) => {
       restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
     });
+    // eslint-disable-next-line no-undef
+    imgLightbox('img-lightbox-link');
   },
 };
 

@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <a href="#mainContent" class="skip-link">Menuju ke konten</a>
+    <button onclick="document.getElementById('mainContent').focus();" class="skip-link">Menuju ke konten</button>
     <header class="header">
         <div class="header_menu">
             <button id="hamburgerButton">☰</button>
@@ -27,12 +27,10 @@
         </nav>
     </header>
 
-    <main id="mainContent">
-        
+    <main id="mainContent" tabindex="0">
     </main>
 
-    <footer id="footer">
-    </footer>
+    <footer-widget id="footerWidget"></footer-widget>
     <noscript>Browser anda tidak mendukung atau belum mengaktifkan JavaScript!</noscript>
 </body>
 </html>
