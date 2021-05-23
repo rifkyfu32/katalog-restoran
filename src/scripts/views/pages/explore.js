@@ -1,20 +1,22 @@
 import RestaurantSource from '../../data/restaurant-source';
+import { createHeroTemplate, createRestaurantItemTemplate } from '../templates/template-creator';
 
 const ExploreRestaurants = {
   async render() {
-    return `
+    return `${createHeroTemplate()}
     <section class="content">
-            <div class="explore">
-                <h2 class="explore_label">Explore Restaurant</h2>
-                <div class="restaurants">    
-                </div>
-            </div>
-        </section>
+      <h2 class="content_heading">Explore Restaurants</h2>
+      <div id="restaurants" class="restaurants">
+      </div>
+    </section>
     `;
   },
   async afterRender() {
     const restaurants = await RestaurantSource.exploreRestaurants();
-    console.log(restaurants);
+    const restaurantsContainer = document.querySelector('#restaurants');
+    restaurants.forEach((restaurant) => {
+      restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+    });
   },
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../styles/responsive.css';
@@ -11,7 +12,7 @@ const app = new App({
   drawer: document.querySelector('#navigationDrawer'),
   content: document.querySelector('#mainContent'),
 });
-const header = document.querySelector('.header');
+// const header = document.querySelector('.header');
 // const elementRestaurant = document.querySelector('.restaurants');
 const footer = document.querySelector('#footer');
 /* const shortenText = (str, maxLen, separator = ' ') => {
@@ -20,13 +21,13 @@ const footer = document.querySelector('#footer');
 }; */
 
 // add header sticky
-window.onscroll = () => {
+/* window.onscroll = () => {
   if (window.pageYOffset >= header.offsetTop) {
     header.classList.add('sticky');
   } else {
     header.classList.remove('sticky');
   }
-};
+}; */
 
 window.addEventListener('hashchange', () => {
   app.renderPage();
@@ -51,24 +52,24 @@ window.addEventListener('load', () => {
     console.log(element);
     itemRestaurants += `
           <article class="restaurant-item" id="${element.id}">
-            <figure class="restaurant-figure" aria-label="${element.name}">
+            <div class="restaurant-item_header">
               <a href="${element.pictureId}"
-              class="img-lightbox-link"
-              data-src="${element.pictureId}"
-              aria-hidden="true"
-              rel="lightbox">
-                <img class="restaurant-item_thumbnail"
-                 src="${element.pictureId}"
-                 alt="Gambar ${element.name}">
+                class="img-lightbox-link"
+                data-src="${element.pictureId}"
+                aria-hidden="true"
+                rel="lightbox">
+                  <img class="restaurant-item_header_photo"
+                  src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL_LARGE + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}"
+                  alt="Photo ${element.name}">
               </a>
-              <figcaption class="restaurant-item_location">Kota ${element.city}</figcaption>
-              <figcaption class="restaurant-item_address">${element.address}</figcaption>
-            </figure>
+              <div class="restaurant-item_header_rating">
+                <p>⭐️<span class="restaurant-item_header_rating_score">${restaurant.rating}</span></p>
+              </div>
+            </div>
             <div class="restaurant-item_content">
-              <h3 class="restaurant-item_rating">Rating : ${element.rating}</h3>
-              <h3 class="restaurant-item_title"><a href="#${element.id}">${element.name}</a></h3>
-              <p class="restaurant-item_description">${shortenText(element.description, 160)}...</p>
-              <a href="#${element.id}" class="restaurant-item-btn">Selengkapnya</a>
+                <h3><a href="${`/#/detail/${restaurant.id}`}">${restaurant.name}</a></h3>
+                <p>${shortenText(restaurant.description, 160)}...</p>
+                <a href="${`/#/detail/${restaurant.id}`}" class="restaurant-item-btn">Selengkapnya</a>
             </div>
           </article>
           `;
@@ -77,7 +78,7 @@ window.addEventListener('load', () => {
 elementRestaurant.innerHTML = itemRestaurants;
  */
 // add footer copyright content
-footer.innerHTML = `<p>© 2016 - ${new Date().getFullYear()} Delizia Apps, All rights reserved.</p>`;
+footer.innerHTML = `<p>© 2016 - ${new Date().getFullYear()} Delizia Apps, All rights reserved. All data obtained from <a href="https://restaurant-api.dicoding.dev/" target="_blank" rel="noreferrer">Dicoding</a>.</p>`;
 
 // make image lightbox on click
 document.addEventListener('DOMContentLoaded', () => {
