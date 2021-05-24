@@ -322,10 +322,11 @@ main {
 }
  
 .restaurant .restaurant_info h4 {
-  margin: 8px 0;
+  margin: 16px 0;
 }
 
-.restaurant .restaurant_food h3, .restaurant .restaurant_drink h3, .restaurant .restaurant_description h3, .restaurant .restaurant_review h3 {
+.restaurant .restaurant_food h3, .restaurant .restaurant_drink h3, 
+.restaurant .restaurant_description h3, .restaurant .restaurant_review h3 {
   margin: 8px 0;
 }
 
@@ -333,8 +334,21 @@ main {
 	padding-inline-start: 25px;
 }
 
+.restaurant_review_title {
+  display: flex;
+  justify-content: space-between;
+}
+
 #customerReviews {
 	margin-top: 1.25rem;
+}
+
+#customerReviews .panel{
+  margin-top: 2.5rem;
+}
+
+#customerReviews .panel h4 {
+  margin: 16px 0;
 }
 
 .divider {
@@ -381,6 +395,229 @@ main {
 	font-size: .8em;
 	text-align: right;
 }
+
+.form-group:not(:last-child) {
+  margin-bottom: .4rem;
+}
+
+.form-label {
+  display: block;
+  line-height: 1.2rem;
+  padding: .3rem 0;
+}
+
+.form-input {
+	min-height: 44px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff;
+  background-image: none;
+  border: .05rem solid #bcc3ce;
+  border-radius: .1rem;
+  color: #3b4351;
+  display: block;
+  font-size: .8rem;
+  height: 1.8rem;
+  line-height: 1.2rem;
+  max-width: 100%;
+  outline: 0;
+  padding: .25rem .4rem;
+  position: relative;
+  transition: background .2s,border .2s,box-shadow .2s,color .2s;
+  width: 100%;
+  margin: 8px 0;
+}
+
+.form-input:focus {
+  border-color: #5755d9;
+  box-shadow: 0 0 0 0.1rem rgb(87 85 217 / 20%);
+}
+
+textarea.form-input {
+  height: auto;
+}
+
+.loader {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba( 255, 255, 255, .8) url('./images/loader.gif') 50% 50% no-repeat;
+}
+
+body.loading {
+  overflow: hidden;
+}
+
+body.loading .loader {
+  display: block;
+}
+
+.btn {
+	min-width: 44px;
+	min-height: 44px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff;
+  border: .05rem solid #5755d9;
+  border-radius: .1rem;
+  color: #5755d9;
+  cursor: pointer;
+  display: inline-block;
+  font-size: .8rem;
+  height: 1.8rem;
+  line-height: 1.2rem;
+  outline: 0;
+  padding: .25rem .4rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background .2s,border .2s,box-shadow .2s,color .2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.btn.btn-primary {
+  background: #5755d9;
+  border-color: #4b48d6;
+  color: #fff;
+}
+
+.btn:focus, .btn:hover {
+  background: #f1f1fc;
+  border-color: #4b48d6;
+  text-decoration: none;
+}
+
+.btn.active, .btn:active {
+  background: #4b48d6;
+  border-color: #3634d2;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn.btn-primary:focus, .btn.btn-primary:hover {
+  background: #4240d4;
+  border-color: #3634d2;
+  color: #fff;
+}
+
+.btn.btn-primary.active, .btn.btn-primary:active {
+  background: #3a38d2;
+  border-color: #302ecd;
+  color: #fff;
+}
+
+.btn.tooltip {
+  position: relative;
+}
+
+.alert {
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+.alert-danger {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}
+
+.alert-danger .alert-link {
+  color: #6a1a21;
+}
+
+.alert-link {
+  font-weight: 700;
+}
+
+/*
+   Floating action button
+*/
+.fab {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  color: #fff;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fab.fab-danger {
+  background-color: #e85600;
+}
+
+.fab.fab-success {
+  background-color: #32b643;
+}
+
+.fab.fab-success:focus, .fab.fab-success:hover, .fab.fab-success:active {
+  background: #30ae40;
+  border-color: #2da23c;
+  color: #fff;
+}
+
+.fab.fab-danger:focus, .fab.fab-danger:hover, .fab.fab-danger:active {
+  background: #de5200;
+  border-color: #cf4d00;
+  color: #fff;
+}
+
+.tooltip::after {
+  background: rgba(48,55,66,.95);
+  border-radius: .1rem;
+  bottom: 100%;
+  color: #fff;
+  content: attr(data-tooltip);
+  display: block;
+  font-size: .7rem;
+  left: 50%;
+  max-width: 320px;
+  opacity: 0;
+  overflow: hidden;
+  padding: .2rem .4rem;
+  pointer-events: none;
+  position: absolute;
+  text-overflow: ellipsis;
+  transform: translate(-50%,.4rem);
+  transition: opacity .2s,transform .2s;
+  white-space: pre;
+  z-index: 300;
+}
+
+.tooltip:focus::after, .tooltip:hover::after {
+  opacity: 1;
+  transform: translate(-50%,-.2rem);
+}
+
+.tooltip.tooltip-left:focus::after, .tooltip.tooltip-left:hover::after {
+  transform: translate(-.2rem,50%);
+}
+
+.tooltip.tooltip-left::after {
+  bottom: 50%;
+  left: auto;
+  right: 100%;
+  transform: translate(.4rem,50%);
+}
+
 
 /*
  * footer

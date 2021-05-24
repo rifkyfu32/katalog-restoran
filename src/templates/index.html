@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
-    <link rel="icon" href="favicon.ico">
+    <meta name="msapplication-TileColor" content="#810000">
+    <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png" /> 
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet" type="text/css">
 </head>
@@ -13,7 +17,7 @@
     <button onclick="document.getElementById('mainContent').focus();" class="skip-link">Menuju ke konten</button>
     <header class="header">
         <div class="header_menu">
-            <button id="hamburgerButton">☰</button>
+            <button id="hamburgerButton"><i class="icon icon-menu"></i></button>
         </div>
         <div class="header_brand">
             <h1>Delizia Apps</h1>

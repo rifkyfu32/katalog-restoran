@@ -34,10 +34,13 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9",
+    "webpack-pwa-manifest": "^4.3.0",
     "whatwg-fetch": "^3.2.0"
   },
   "dependencies": {
+    "idb": "^6.1.0",
     "img-lightbox": "^0.2.5",
-    "regenerator-runtime": "^0.13.5"
+    "regenerator-runtime": "^0.13.5",
+    "serviceworker-webpack-plugin": "^1.0.1"
   }
 }

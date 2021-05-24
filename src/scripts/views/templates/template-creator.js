@@ -22,6 +22,26 @@ const createReviewTemplate = (review) => `
   </div>
 `;
 
+const createAddReviewTemplate = () => `
+  <div class="panel">
+    <h4>Add Your Review</h4>
+    <div class="divider"></div>
+    <form>
+      <div class="form-group">
+        <label class="form-label" for="review_name">Name</label>
+        <input class="form-input" type="text" id="review_name" placeholder="Your Name" required minlength="4">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="review_message">Message</label>
+        <textarea class="form-input" id="review_message" placeholder="Your Review" rows="3" required minlength="8"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" id="btn-submit-review" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+`;
+
 const createRestaurantItemTemplate = (restaurant) => `
   <article class="restaurant-item" id="${restaurant.id}">
   <div class="restaurant-item_header">
@@ -77,10 +97,38 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <p>${restaurant.description}</p>
   </div>
   <div class="restaurant_review panel">
-    <h3>Review</h3>
+    <div class="restaurant_review_title">
+      <h3>Review</h3>
+      <button onclick="document.getElementById('review_name').focus();" class="btn tooltip tooltip-left" data-tooltip="Add review for this restaurant">Add Review</button>
+    </div>
     <div class="divider"></div>
     <div id="customerReviews"></div>
   </div>
+`;
+
+const createAlertTemplate = (message) => `
+  <div class="alert alert-danger" role="alert">
+  <i class="icon icon-stop"></i> An error occurred because ${message} 
+  . You can return to the <a href="./" class="alert-link">homepage</a>.
+  </div>
+`;
+
+const createBookmarkButtonTemplate = () => `
+  <button id="bookmarkButton" 
+    class="fab fab-success tooltip tooltip-left"
+    aria-label="bookmark this restaurant" 
+    data-tooltip="Bookmark this restaurant">
+     <i class="icon icon-bookmark icon-1x" aria-hidden="true"></i>
+  </button>
+`;
+
+const createBookmarkedButtonTemplate = () => `
+  <button id="bookmarkButton" 
+    class="fab fab-danger tooltip tooltip-left"
+    aria-label="unbookmark this restaurant" 
+    data-tooltip="Unbookmark this restaurant">
+    <i class="icon icon-delete icon-1x" aria-hidden="true"></i>
+  </button>
 `;
 
 export {
@@ -88,4 +136,8 @@ export {
   createRestaurantDetailTemplate,
   createRestaurantItemTemplate,
   createReviewTemplate,
+  createAddReviewTemplate,
+  createAlertTemplate,
+  createBookmarkButtonTemplate,
+  createBookmarkedButtonTemplate,
 };

@@ -1,0 +1,93 @@
+.icon {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: inherit;
+  font-style: normal;
+  height: 1em;
+  position: relative;
+  text-indent: -9999px;
+  vertical-align: middle;
+  width: 1em;
+}
+
+.icon::before,
+.icon::after {
+  content: "";
+  display: block;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon.icon-1x {
+  font-size: 24px;
+}
+
+.icon.icon-2x {
+  font-size: 32px;
+}
+
+.icon.icon-3x {
+  font-size: 48px;
+}
+
+.icon.icon-4x {
+  font-size: 64px;
+}
+
+.icon-menu::before {
+  background: currentColor;
+  box-shadow: 0 -.35em, 0 .35em;
+  height: .1rem;
+  width: 100%;
+}
+
+.icon-stop {
+  border: .1rem solid currentColor;
+  border-radius: 50%;
+}
+
+.icon-stop::before {
+  background: currentColor;
+  height: .1rem;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 1em;
+}
+
+.icon-bookmark::before {
+  border: .1rem solid currentColor;
+  border-bottom: 0;
+  border-top-left-radius: .1rem;
+  border-top-right-radius: .1rem;
+  height: .9em;
+  width: .85em;
+}
+
+.icon-bookmark::after {
+  border: .1rem solid currentColor;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: .1rem;
+  height: .5em;
+  transform: translate(-50%, .2em) rotate(-45deg) skew(15deg, 15deg);
+  width: .5em;
+}
+
+.icon-delete::before {
+  border: .1rem solid currentColor;
+  border-bottom-left-radius: .1rem;
+  border-bottom-right-radius: .1rem;
+  border-top: 0;
+  height: .6em;
+  top: 70%;
+  width: .75em;
+}
+
+.icon-delete::after {
+  background: currentColor;
+  box-shadow: -.2em .2em, .2em .2em;
+  height: .1rem;
+  top: .05rem;
+  width: .5em;
+}
