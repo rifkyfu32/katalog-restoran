@@ -5,10 +5,9 @@ import {
   createReviewTemplate,
   createAddReviewTemplate,
   createAlertTemplate,
-  createBookmarkButtonTemplate,
-  createBookmarkedButtonTemplate,
 } from '../templates/template-creator';
 import 'img-lightbox/js/img-lightbox';
+import BookmarkButtonInitiator from '../../utils/bookmark-button-initiator';
 
 const Detail = {
   async render() {
@@ -16,7 +15,6 @@ const Detail = {
     <section class="content">
       <article id="restaurant" class="restaurant"></article>
       <div id="bookmarkButtonContainer"></div>
-      <div id="bookmarkedButtonContainer"></div>
       <div id="error_view"></div>
     </section>
     <div class="loader"></div>
@@ -28,7 +26,6 @@ const Detail = {
     try {
       const url = UrlParser.parseActiveUrlWithoutCombiner();
       const restaurant = await RestaurantSource.detailRestaurant(url.id);
-      console.log(restaurant);
       const restaurantContainer = document.querySelector('#restaurant');
       restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
       // eslint-disable-next-line no-undef
@@ -38,10 +35,21 @@ const Detail = {
         customerReviewsContainer.innerHTML += createReviewTemplate(review);
       });
       customerReviewsContainer.innerHTML += createAddReviewTemplate();
-      const bookmarkButtonContainer = document.querySelector('#bookmarkButtonContainer');
-      bookmarkButtonContainer.innerHTML = createBookmarkButtonTemplate();
-      const bookmarkedButtonContainer = document.querySelector('#bookmarkedButtonContainer');
-      bookmarkedButtonContainer.innerHTML = createBookmarkedButtonTemplate();
+      BookmarkButtonInitiator.init({
+        bookmarkButtonContainer: document.querySelector('#bookmarkButtonContainer'),
+        restaurant: {
+          id: restaurant.id,
+          name: restaurant.name,
+          address: restaurant.address,
+          city: restaurant.city,
+          category: restaurant.category,
+          rating: restaurant.rating,
+          menus: restaurant.menus,
+          description: restaurant.description,
+          pictureId: restaurant.pictureId,
+          customerReviews: restaurant.customerReviews,
+        },
+      });
     } catch (error) {
       const errorContainer = document.querySelector('#error_view');
       errorContainer.innerHTML = createAlertTemplate(error);

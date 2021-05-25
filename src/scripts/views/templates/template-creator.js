@@ -122,7 +122,7 @@ const createBookmarkButtonTemplate = () => `
   </button>
 `;
 
-const createBookmarkedButtonTemplate = () => `
+const createUnBookmarkButtonTemplate = () => `
   <button id="bookmarkButton" 
     class="fab fab-danger tooltip tooltip-left"
     aria-label="unbookmark this restaurant" 
@@ -139,5 +139,5 @@ export {
   createAddReviewTemplate,
   createAlertTemplate,
   createBookmarkButtonTemplate,
-  createBookmarkedButtonTemplate,
+  createUnBookmarkButtonTemplate,
 };
