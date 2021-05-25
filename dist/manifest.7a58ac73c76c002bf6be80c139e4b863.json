@@ -1,0 +1,54 @@
+{
+  "icons": [
+    {
+      "src": "icon_1024x1024.0911a6c4475b00833f6f08fb91d5054f.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon_1024x1024.0911a6c4475b00833f6f08fb91d5054f.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_512x512.2d5aa9c873e30140f21b38a14613fbe3.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_384x384.070ca749e9a88e7eea6cafb745ffc6df.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_256x256.d4621cb27f0c73d9b67522861db22942.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_192x192.ac6db83be9a7af29bace86f2a28b3c52.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_128x128.45d5bc2c376de22457c5adc1d17494e6.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_96x96.c51b5b7747ef511968ffaf77eeaa191a.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Delizia App",
+  "short_name": "Delizia",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "Aplikasi pencarian restaurant Delizia",
+  "background_color": "#ffffff",
+  "theme_color": "#810000",
+  "gcm_sender_id": "72344101608"
+}

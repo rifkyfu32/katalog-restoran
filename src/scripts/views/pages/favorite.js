@@ -1,5 +1,9 @@
 import ServiceRestaurantIdb from '../../data/restaurant-idb';
-import { createRestaurantItemTemplate, createAlertTemplate } from '../templates/template-creator';
+import {
+  createRestaurantItemTemplate,
+  createAlertTemplate,
+  createErrorTemplate,
+} from '../templates/template-creator';
 
 const Favorite = {
   async render() {
@@ -7,7 +11,7 @@ const Favorite = {
       <section class="content">
         <h2 class="content_heading">Your Favorite Restaurants</h2>
         <div id="restaurants" class="restaurants"></div>
-        <div id="error_view"></div>
+        <div id="errorView"></div>
       </section>
       <div class="loader"></div>
     `;
@@ -18,14 +22,17 @@ const Favorite = {
     try {
       const restaurants = await ServiceRestaurantIdb.getAllRestaurants();
       const restaurantsContainer = document.querySelector('#restaurants');
-      restaurants.forEach((restaurant) => {
-        restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
-      });
-      // eslint-disable-next-line no-undef
-      imgLightbox('img-lightbox-link');
+      if (restaurants.length > 0) {
+        restaurants.forEach((restaurant) => {
+          restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+        });
+      } else {
+        const errorContainer = document.querySelector('#errorView');
+        errorContainer.innerHTML = createAlertTemplate('You don\'t have a favorite restaurant');
+      }
     } catch (error) {
-      const errorContainer = document.querySelector('#error_view');
-      errorContainer.innerHTML = createAlertTemplate(error);
+      const errorContainer = document.querySelector('#errorView');
+      errorContainer.innerHTML = createErrorTemplate(error);
     } finally {
       document.body.classList.remove('loading');
     }

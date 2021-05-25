@@ -4,10 +4,11 @@ import {
   createRestaurantDetailTemplate,
   createReviewTemplate,
   createAddReviewTemplate,
-  createAlertTemplate,
+  createErrorTemplate,
 } from '../templates/template-creator';
 import 'img-lightbox/js/img-lightbox';
 import BookmarkButtonInitiator from '../../utils/bookmark-button-initiator';
+import ReviewPost from '../../utils/review-post';
 
 const Detail = {
   async render() {
@@ -15,7 +16,7 @@ const Detail = {
     <section class="content">
       <article id="restaurant" class="restaurant"></article>
       <div id="bookmarkButtonContainer"></div>
-      <div id="error_view"></div>
+      <div id="errorView"></div>
     </section>
     <div class="loader"></div>
     `;
@@ -30,11 +31,28 @@ const Detail = {
       restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
       // eslint-disable-next-line no-undef
       imgLightbox('img-lightbox-link');
+
       const customerReviewsContainer = document.querySelector('#customerReviews');
       restaurant.customerReviews.forEach((review) => {
         customerReviewsContainer.innerHTML += createReviewTemplate(review);
       });
-      customerReviewsContainer.innerHTML += createAddReviewTemplate();
+
+      const addReviewsContainer = document.querySelector('#addReviews');
+      addReviewsContainer.innerHTML += createAddReviewTemplate();
+
+      const reviewError = document.querySelector('#reviewError');
+      const reviewName = document.querySelector('#reviewName');
+      const reviewMessage = document.querySelector('#reviewMessage');
+      const btnSubmitReview = document.querySelector('#btnSubmitReview');
+      ReviewPost.init({
+        customerReviews: customerReviewsContainer,
+        reviewError,
+        reviewID: url.id,
+        reviewName,
+        reviewMessage,
+        btnSubmitReview,
+      });
+
       BookmarkButtonInitiator.init({
         bookmarkButtonContainer: document.querySelector('#bookmarkButtonContainer'),
         restaurant: {
@@ -51,8 +69,8 @@ const Detail = {
         },
       });
     } catch (error) {
-      const errorContainer = document.querySelector('#error_view');
-      errorContainer.innerHTML = createAlertTemplate(error);
+      const errorContainer = document.querySelector('#errorView');
+      errorContainer.innerHTML = createErrorTemplate(error);
     } finally {
       document.body.classList.remove('loading');
     }

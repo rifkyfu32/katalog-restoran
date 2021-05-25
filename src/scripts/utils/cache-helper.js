@@ -27,12 +27,16 @@ const CacheHelper = {
   },
 
   async fetchRequest(request) {
-    const response = await fetch(request);
-    if (!response || response.status !== 200) {
+    try {
+      const response = await fetch(request);
+      if (!response || response.status !== 200) {
+        return response;
+      }
+      await this.addCache(request);
       return response;
+    } catch {
+      return null;
     }
-    await this.addCache(request);
-    return response;
   },
 
   async addCache(request) {

@@ -434,6 +434,16 @@ main {
   box-shadow: 0 0 0 0.1rem rgb(87 85 217 / 20%);
 }
 
+.form-input.is-error, .form-select.is-error, .has-error .form-input, .has-error .form-select {
+  background: #fffaf7;
+  border-color: #e85600;
+}
+
+.form-input.is-success, .form-select.is-success, .has-success .form-input, .has-success .form-select {
+  background: #f9fdfa;
+  border-color: #32b643;
+}
+
 textarea.form-input {
   height: auto;
 }
@@ -528,6 +538,12 @@ body.loading .loader {
   border-radius: .25rem;
 }
 
+.alert-warning {
+  color: #664d03;
+  background-color: #fff3cd;
+  border-color: #ffecb5;
+}
+
 .alert-danger {
   color: #842029;
   background-color: #f8d7da;
@@ -540,6 +556,24 @@ body.loading .loader {
 
 .alert-link {
   font-weight: 700;
+}
+
+.btn-alert-close {
+  margin-left: 15px;
+  color: inherit;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .2;
+}
+
+.btn-alert-close:hover, .btn-alert-close:focus {
+  color: #000;
+  opacity: .5;
 }
 
 /*
