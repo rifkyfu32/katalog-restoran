@@ -31,10 +31,12 @@ const createAddReviewTemplate = () => `
       <div class="form-group">
         <label class="form-label" for="reviewName">Name</label>
         <input class="form-input" type="text" id="reviewName" placeholder="Your Name">
+        <div class="feedback"></div>
       </div>
       <div class="form-group">
         <label class="form-label" for="reviewMessage">Message</label>
         <textarea class="form-input" id="reviewMessage" placeholder="Your Review" rows="3"></textarea>
+        <div class="feedback"></div>
       </div>
       <div class="form-group">
         <button type="button" id="btnSubmitReview" class="btn btn-primary">Submit</button>
@@ -52,7 +54,7 @@ const createRestaurantItemTemplate = (restaurant) => `
           alt="Photo ${restaurant.name}">
     </div>
     <div class="restaurant-item_content">
-        <h3><a href="${`/#/detail/${restaurant.id}`}">${restaurant.name}</a></h3>
+        <h3>${restaurant.name}</a></h3>
         <p>${shortenText(restaurant.description, 160)}...</p>
         <a href="${`/#/detail/${restaurant.id}`}" class="restaurant-item-btn">Selengkapnya</a>
     </div>

@@ -15,16 +15,17 @@ body {
 
 .skip-link {
 	position: absolute;
-	top: -40px;
+	top: -50px;
 	left: 0;
 	background-color: #bf1722;
 	color: white;
 	padding: 8px;
 	z-index: 100;
+  min-height: 44px;
 }
 
 .skip-link:focus {
-	top: 0;
+	top: 62px;
 }
 
 
@@ -57,6 +58,7 @@ body {
   padding: 8px;
   cursor: pointer;
 	color: #eeeeee;
+  min-height: 44px;
 }
 
 .header .header_brand {
@@ -69,6 +71,7 @@ body {
   text-transform: uppercase;
   font-size: 22px;
   user-select: none;
+  line-height: 44px;
 }
 
 .header .header_navigation {
@@ -94,6 +97,7 @@ body {
   padding: 8px;
   margin-bottom: 5px;
   width: 100%;
+  min-height: 44px;
 }
 
 .header .header_navigation ul li a:focus, .header .header_navigation ul li a:hover {
@@ -120,6 +124,7 @@ main {
 
 .content .content_heading {
   font-weight: normal;
+  line-height: 44px;
 }
 
 /*
@@ -150,12 +155,15 @@ main {
 	color: #fff;
 	font-weight: 500;
 	font-size: 36px;
+  line-height: 44px;
 }
 
 .hero_tagline {
 	color: #fff;
 	margin-top: 16px;
 	font-size: 18px;
+  line-height: 1.2;
+  min-height: 44px;
 }
 
 /*
@@ -172,6 +180,10 @@ main {
 /*
  * restaurant item
  */
+ 
+.restaurant .restaurant_title {
+  line-height: 44px;
+}
 
 .restaurant-item {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -235,14 +247,14 @@ main {
 .restaurant-item .restaurant-item_content {
   padding: 16px;
 }
- 
-.restaurant-item .restaurant-item_content h3 {
-  margin: 0 0 10px 0;
+
+.restaurant-item .restaurant-item_content p {
+  line-height: 1.5;
 }
  
-.restaurant-item .restaurant-item_content h3 a {
+.restaurant-item .restaurant-item_content h3 {
+  line-height: 44px;
   color: #db0000;
-  text-decoration: none;
 }
  
 .restaurant-item .movie-item_content p {
@@ -320,18 +332,27 @@ main {
   width: 100%;
   max-width: 400px;
 }
- 
-.restaurant .restaurant_info h4 {
-  margin: 16px 0;
+
+.restaurant .restaurant_info h3, .restaurant .restaurant_info h4, .restaurant .restaurant_info p {
+  line-height: 44px;
 }
 
 .restaurant .restaurant_food h3, .restaurant .restaurant_drink h3, 
 .restaurant .restaurant_description h3, .restaurant .restaurant_review h3 {
-  margin: 8px 0;
+  line-height: 44px;
 }
 
 .restaurant .restaurant_food ul, .restaurant .restaurant_drink ul {	
 	padding-inline-start: 25px;
+}
+
+.restaurant .restaurant_food ul li, .restaurant .restaurant_drink ul li {	
+  line-height: 44px;
+}
+
+.restaurant_description p {
+  line-height: 1.8;
+  margin: 0 15px;
 }
 
 .restaurant_review_title {
@@ -349,6 +370,15 @@ main {
 
 #customerReviews .panel h4 {
   margin: 16px 0;
+}
+
+#addReviews h4 {
+  line-height: 44px;
+}
+
+label.form-label {
+  line-height: 44px;
+  min-width: 44px;
 }
 
 .divider {
@@ -380,6 +410,7 @@ main {
 
 .card .card-header h4 {
 	text-transform: capitalize;
+  line-height: 44px;
 }
 
 .card .card-body {
@@ -389,11 +420,13 @@ main {
 
 .card .card-body .card-text{
 	margin: 8px 0;
+  min-height: 44px;
 }
 
 .card .card-body .card-date {
 	font-size: .8em;
 	text-align: right;
+  min-height: 44px;
 }
 
 .form-group:not(:last-child) {
@@ -446,6 +479,26 @@ main {
 
 textarea.form-input {
   height: auto;
+}
+
+.invalid-feedback {
+  display: block;
+  width: 100%;
+  margin-top: .25rem;
+  font-size: .875em;
+  color: #dc3545;
+}
+
+.valid-feedback {
+  display: block;
+  width: 100%;
+  margin-top: .25rem;
+  font-size: .875em;
+  color: #198754;
+}
+
+#btnSubmitReview {
+  margin-top: 15px;
 }
 
 .loader {
@@ -665,6 +718,7 @@ body.loading .loader {
 #footerWidget p {
   text-align: center;
   color: #eeeeee;
+  line-height: 44px;
 }
  
 #footerWidget p a {

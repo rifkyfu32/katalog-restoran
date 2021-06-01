@@ -25,9 +25,17 @@ const ReviewPost = {
       if (element.value.length < fieldLenght) {
         element.classList.remove('is-success');
         element.classList.add('is-error');
+        // eslint-disable-next-line no-param-reassign
+        element.nextElementSibling.innerHTML = `Minimal karakter ${fieldLenght}`;
+        element.nextElementSibling.classList.remove('valid-feedback');
+        element.nextElementSibling.classList.add('invalid-feedback');
       } else {
         element.classList.remove('is-error');
         element.classList.add('is-success');
+        // eslint-disable-next-line no-param-reassign
+        element.nextElementSibling.innerHTML = 'Keren!';
+        element.nextElementSibling.classList.remove('invalid-feedback');
+        element.nextElementSibling.classList.add('valid-feedback');
       }
     });
   },
@@ -36,9 +44,15 @@ const ReviewPost = {
     this.reviewName.value = '';
     this.reviewName.classList.remove('is-success');
     this.reviewName.classList.remove('is-error');
+    this.reviewName.nextElementSibling.innerHTML = '';
+    this.reviewName.nextElementSibling.classList.remove('invalid-feedback');
+    this.reviewName.nextElementSibling.classList.remove('valid-feedback');
     this.reviewMessage.value = '';
     this.reviewMessage.classList.remove('is-success');
     this.reviewMessage.classList.remove('is-error');
+    this.reviewMessage.nextElementSibling.innerHTML = '';
+    this.reviewMessage.nextElementSibling.classList.remove('invalid-feedback');
+    this.reviewMessage.nextElementSibling.classList.remove('valid-feedback');
   },
 
   showErrorReview(message) {
